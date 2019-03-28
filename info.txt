@@ -1,0 +1,6 @@
+# https://askubuntu.com/questions/555660/create-a-vsftpd-server-with-anonymous-access
+# http://slacksite.com/other/ftp.html
+# https://serverfault.com/questions/421161/how-to-configure-vsftpd-to-work-with-passive-mode
+# https://superuser.com/questions/908024/vsftpd-500-oops-prctl-pr-set-seccomp-failed/1154585
+# https://serverfault.com/questions/714311/vsftpd-usually-works-but-sometimes-gives-fail-download-on-ubuntu
+# https://www.linuxquestions.org/questions/linux-server-73/vsftpd-no-logs-839218/

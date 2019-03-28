@@ -6,6 +6,12 @@
 ## Software
 [vsftpd](https://security.appspot.com/vsftpd.html) - A GPL licensed FTP server
 
+## About the image
+The goal of this image is to provide quick and easy acces to serving files over FTP \
+The server is restricted to read-only transfers by the anonymous user \
+The anonymous user has no password and no other user will be allowed to connect \
+The configuration of this server will not allow uploads of any kind
+
 ## Get the image from Docker Hub
 ```
 docker pull fullaxx/vsftpd

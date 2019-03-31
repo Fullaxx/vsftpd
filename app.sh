@@ -9,7 +9,7 @@ if [ "${VERBOSELOG}" == "YES" ]; then
   echo "log_ftp_protocol=YES" >> /etc/vsftpd.conf
 fi
 
-if [ "${DUALLOG}" == "YES" ]; then
+if [ "${XFERLOG}" == "YES" ]; then
   echo "dual_log_enable=YES" >> /etc/vsftpd.conf
 fi
 

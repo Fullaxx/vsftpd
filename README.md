@@ -28,7 +28,7 @@ Activate verbose logging
 ```
 Activate transfer log
 ```
--e DUALLOG='YES'
+-e XFERLOG='YES'
 ```
 
 ## Volume Options
@@ -54,7 +54,7 @@ fullaxx/vsftpd
 Run the image using 2000-2999 as passive ports and enable all logging options
 ```
 docker run -d \
--e DUALLOG='YES' -e VERBOSELOG='YES' \
+-e XFERLOG='YES' -e VERBOSELOG='YES' \
 -e PASVMINPORT='2000' -e PASVMAXPORT='2999' \
 -p 21:21 -p 2000-2999:2000-2999 \
 -v /srv/docker/vsftpd/ftp:/srv/ftp \

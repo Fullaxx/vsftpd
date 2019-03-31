@@ -18,7 +18,7 @@ docker pull fullaxx/vsftpd
 ```
 
 ## Configuration Options
-Set the range of port numbers used for PASV transfers
+Set the range of port numbers used for passive transfers
 ```
 -e PASVMINPORT='2000' -e PASVMAXPORT='2999'
 ```
@@ -42,7 +42,7 @@ Logs can be found in /log/
 ```
 
 ## Run the image
-Run the image using 2000-2999 as PASSIVE ports
+Run the image using 2000-2999 as passive ports
 ```
 docker run -d \
 -e PASVMINPORT='2000' -e PASVMAXPORT='2999' \
@@ -51,6 +51,15 @@ docker run -d \
 -v /srv/docker/vsftpd/log:/log \
 fullaxx/vsftpd
 ```
+Run the image using 2000-2999 as passive ports and enable all logging options
+```
+docker run -d \
+-e DUALLOG='YES' -e VERBOSELOG='YES' \
+-e PASVMINPORT='2000' -e PASVMAXPORT='2999' \
+-p 21:21 -p 2000-2999:2000-2999 \
+-v /srv/docker/vsftpd/ftp:/srv/ftp \
+-v /srv/docker/vsftpd/log:/log \
+fullaxx/vsftpd
 
 ## Build it locally using the github repository
 ```

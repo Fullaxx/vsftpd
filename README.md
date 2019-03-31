@@ -22,21 +22,23 @@ Set the range of port numbers used for passive transfers
 ```
 -e PASVMINPORT='2000' -e PASVMAXPORT='2999'
 ```
-Activate verbose logging
+Activate verbose logging (/log/vsftpd.log)
 ```
 -e VERBOSELOG='YES'
 ```
-Activate transfer log
+Activate transfer log (/log/xfer.log)
 ```
 -e XFERLOG='YES'
 ```
 
 ## Volume Options
-Place your ftp data in /srv/docker/vsftpd/ftp/
+Place your ftp data in /srv/docker/vsftpd/ftp/ \
+vsftpd will serve your data from /srv/ftp
 ```
 -v /srv/docker/vsftpd/ftp:/srv/ftp
 ```
-Logs can be found in /log/
+vsftpd will create your log files in /log/ \
+You may find them under /srv/docker/vsftpd/log/
 ```
 -v /srv/docker/vsftpd/log:/log
 ```

@@ -1,7 +1,7 @@
 # A small docker image running vsftpd
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) 18.04 (x64)
+[Debian](https://hub.docker.com/_/debian) Buster (x64)
 
 ## Software
 [vsftpd](https://security.appspot.com/vsftpd.html) - A GPL licensed FTP server
@@ -22,11 +22,19 @@ Set the range of port numbers used for PASV transfers
 ```
 -e PASVMINPORT='2000' -e PASVMAXPORT='2999'
 ```
+Activate verbose logging
+```
+-e VERBOSELOG='YES'
+```
 
 ## Volume Options
 Place your ftp data in /srv/docker/vsftpd/ftp/
 ```
 -v /srv/docker/vsftpd/ftp:/srv/ftp
+```
+Logfile is located at /log/vsftpd.log
+```
+-v /srv/docker/vsftpd/log:/log
 ```
 
 ## Run the image
@@ -36,6 +44,7 @@ docker run -d \
 -e PASVMINPORT='2000' -e PASVMAXPORT='2999' \
 -p 21:21 -p 2000-2999:2000-2999 \
 -v /srv/docker/vsftpd/ftp:/srv/ftp \
+-v /srv/docker/vsftpd/log:/log \
 fullaxx/vsftpd
 ```
 

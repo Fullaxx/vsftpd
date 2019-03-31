@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # Pull base image
-FROM ubuntu:bionic
+FROM debian:buster-slim
 MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 
 # ------------------------------------------------------------------------------
@@ -14,7 +14,7 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Configure vsftpd for anonymous read-only transfers in PASV mode
-RUN sed \
+RUN mkdir /log && ln -s /log/vsftpd.log /var/log/vsftpd.log && sed \
 -e 's/anonymous_enable=NO/anonymous_enable=YES/' \
 -e 's/local_enable=YES/local_enable=NO/' \
 -e 's/#write_enable=YES/write_enable=NO/' \
@@ -26,7 +26,7 @@ echo >> /etc/vsftpd.conf && \
 echo "no_anon_password=YES" >> /etc/vsftpd.conf && \
 echo "pasv_enable=YES" >> /etc/vsftpd.conf && \
 echo "pasv_min_port=PASVMINPORT" >> /etc/vsftpd.conf && \
-echo "pasv_max_port=PASVMAXPORT" >> /etc/vsftpd.conf 
+echo "pasv_max_port=PASVMAXPORT" >> /etc/vsftpd.conf
 
 # This appears to be unnecessary on x86_64
 # echo "seccomp_sandbox=no" >> /etc/vsftpd.conf
@@ -39,6 +39,7 @@ COPY app.sh dockerwait.static /app/
 # ------------------------------------------------------------------------------
 # Identify Volumes
 VOLUME /srv/ftp
+VOLUME /log
 
 # ------------------------------------------------------------------------------
 # Expose ports

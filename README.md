@@ -60,6 +60,7 @@ docker run -d \
 -v /srv/docker/vsftpd/ftp:/srv/ftp \
 -v /srv/docker/vsftpd/log:/log \
 fullaxx/vsftpd
+```
 
 ## Build it locally using the github repository
 ```

@@ -25,6 +25,7 @@ Set the range of port numbers used for PASV transfers
 Activate verbose logging
 ```
 -e VERBOSELOG='YES'
+```
 Activate transfer log
 ```
 -e DUALLOG='YES'

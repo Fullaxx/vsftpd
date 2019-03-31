@@ -1,0 +1,31 @@
+http://vsftpd.beasts.org/vsftpd_conf.html
+
+#xferlog_enable
+#	If enabled, a log file will be maintained detailling uploads and downloads.
+#	By default, this file will be placed at /var/log/vsftpd.log,
+#	but this location may be overridden using the configuration setting vsftpd_log_file.
+#	Default: NO (but the sample config file enables it)
+
+#xferlog_std_format
+#	If enabled, the transfer log file will be written in standard xferlog format, as used by wu-ftpd.
+#	This is useful because you can reuse existing transfer statistics generators.
+#	The default format is more readable, however.
+#	The default location for this style of log file is /var/log/xferlog,
+#	but you may change it with the setting xferlog_file.
+#	Default: NO
+
+# -e 's@#xferlog_std_format=YES@xferlog_std_format=YES@'
+
+#vsftpd_log_file
+#	This option is the name of the file to which we write the vsftpd style log file.
+#	This log is only written if the option xferlog_enable is set, and xferlog_std_format is NOT set.
+#	Alternatively, it is written if you have set the option dual_log_enable.
+#	One further complication - if you have set syslog_enable,
+#	then this file is not written and output is sent to the system log instead.
+#	Default: /var/log/vsftpd.log
+
+#xferlog_file
+#	This option is the name of the file to which we write the wu-ftpd style transfer log.
+#	The transfer log is only written if the option xferlog_enable is set, along with xferlog_std_format.
+#	Alternatively, it is written if you have set the option dual_log_enable.
+#	Default: /var/log/xferlog

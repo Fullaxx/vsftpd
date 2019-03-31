@@ -25,6 +25,9 @@ Set the range of port numbers used for PASV transfers
 Activate verbose logging
 ```
 -e VERBOSELOG='YES'
+Activate transfer log
+```
+-e DUALLOG='YES'
 ```
 
 ## Volume Options
@@ -32,7 +35,7 @@ Place your ftp data in /srv/docker/vsftpd/ftp/
 ```
 -v /srv/docker/vsftpd/ftp:/srv/ftp
 ```
-Logfile is located at /log/vsftpd.log
+Logs can be found in /log/
 ```
 -v /srv/docker/vsftpd/log:/log
 ```

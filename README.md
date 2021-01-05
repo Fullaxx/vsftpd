@@ -34,6 +34,8 @@ If you are using host networking (i.e. --network=host) \
 You can specify a specific IP address to bind to
 ```
 -e LISTENIP4=172.17.0.1
+<or>
+-e LISTENIP6=2001:4860:4860::8888
 ```
 
 ## Volume Options

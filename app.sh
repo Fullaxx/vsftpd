@@ -5,6 +5,10 @@ if [ -n "${LISTENIP4}" ]; then
     -e "s/listen=NO/listen=YES\nlisten_address=${LISTENIP4}/" \
     -e "s/listen_ipv6=YES/listen_ipv6=NO/" \
     -i /etc/vsftpd.conf
+elif [ -n "${LISTENIP6}" ]; then
+  sed \
+    -e "s/listen_ipv6=YES/listen_ipv6=YES\nlisten_address6=${LISTENIP6}/" \
+    -i /etc/vsftpd.conf
 fi
 
 sed \

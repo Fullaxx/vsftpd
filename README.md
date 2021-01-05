@@ -30,6 +30,11 @@ Activate transfer log (/log/xfer.log)
 ```
 -e XFERLOG='YES'
 ```
+If you are using host networking (i.e. --network=host) \
+You can specify a specific IP address to bind to
+```
+-e LISTENIP4=172.17.0.1
+```
 
 ## Volume Options
 Place your ftp data in /srv/docker/vsftpd/ftp/ \

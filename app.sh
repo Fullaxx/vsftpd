@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ -n "${LISTENIP4}" ]; then
+  sed \
+    -e "s/listen=NO/listen=YES\nlisten_address=${LISTENIP4}/" \
+    -e "s/listen_ipv6=YES/listen_ipv6=NO/" \
+    -i /etc/vsftpd.conf
+fi
+
 sed \
 -e "s/PASVMINPORT/${PASVMINPORT}/" \
 -e "s/PASVMAXPORT/${PASVMAXPORT}/" \

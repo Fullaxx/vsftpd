@@ -30,12 +30,12 @@ Activate transfer log (/log/xfer.log)
 ```
 -e XFERLOG='YES'
 ```
-If you are using host networking (i.e. --network=host) \
+If you are using host networking \
 You can specify a specific IP address to bind to
 ```
--e LISTENIP4=172.17.0.1
+--network=host -e LISTENIP4=76.51.51.84
 <or>
--e LISTENIP6=2001:4860:4860::8888
+--network=host -e LISTENIP6=2001:4860:4860::8888
 ```
 
 ## Volume Options

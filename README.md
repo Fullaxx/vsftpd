@@ -1,7 +1,7 @@
 # A small docker image running vsftpd
 
 ## Base Docker Image
-[Debian](https://hub.docker.com/_/debian) Buster (x64)
+[Debian](https://hub.docker.com/_/debian) bullseye (x64)
 
 ## Software
 [vsftpd](https://security.appspot.com/vsftpd.html) - A GPL licensed FTP server
@@ -12,9 +12,10 @@ The server is restricted to read-only transfers by the anonymous user \
 The anonymous user has no password and no other user will be allowed to connect \
 The configuration of this server will not allow uploads of any kind
 
-## Get the image from Docker Hub
+## Get the image from Docker Hub or build it locally
 ```
 docker pull fullaxx/vsftpd
+docker build -t="fullaxx/vsftpd" github.com/Fullaxx/vsftpd
 ```
 
 ## Configuration Options
@@ -69,9 +70,4 @@ docker run -d \
 -v /srv/docker/vsftpd/ftp:/srv/ftp \
 -v /srv/docker/vsftpd/log:/log \
 fullaxx/vsftpd
-```
-
-## Build it locally using the github repository
-```
-docker build -t="fullaxx/vsftpd" github.com/Fullaxx/vsftpd
 ```
